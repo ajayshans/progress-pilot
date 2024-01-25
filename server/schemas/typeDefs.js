@@ -1,0 +1,1 @@
+// typeDefs - data accessible by front-end (GraphQL instead of REST APIs)
