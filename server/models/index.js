@@ -1,5 +1,6 @@
-const User = require("./User");
-const Collaborator = require("./Collaborator");
-const Goal = require("./Goal");
+const User = require('./User');
+const SquadMember = require('./SquadMember');
+const Goal = require('./Goal');
+const Task = require('/');
 
-module.exports = { User, Collaborator, Goal };
+module.exports = { User, SquadMember, Goal, Task };
