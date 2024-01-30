@@ -1,43 +1,43 @@
 [
     {
-      "goalText": "Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?",
-      "goalAuthor": "Brian Kernighan"
+      "goalDescription": "Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?",
+      "goalOwner": "Brian Kernighan"
     },
     {
-      "goalText": "Some of the best programming is done on paper, really. Putting it into the computer is just a minor detail.",
-      "goalAuthor": "Max Kanat-Alexander"
+      "goalDescription": "Some of the best programming is done on paper, really. Putting it into the computer is just a minor detail.",
+      "goalOwner": "Max Kanat-Alexander"
     },
     {
-      "goalText": "When you don't create things, you become defined by your tastes rather than ability. Your tastes only narrow & exclude people. So create.",
-      "goalAuthor": "Why The Lucky Stiff"
+      "goalDescription": "When you don't create things, you become defined by your tastes rather than ability. Your tastes only narrow & exclude people. So create.",
+      "goalOwner": "Why The Lucky Stiff"
     },
     {
-      "goalText": "I'm not a great programmer; I'm just a good programmer with great habits.",
-      "goalAuthor": "Kent Beck"
+      "goalDescription": "I'm not a great programmer; I'm just a good programmer with great habits.",
+      "goalOwner": "Kent Beck"
     },
     {
-      "goalText": "Walking on water and developing software from a specification are easy if both are frozen.",
-      "goalAuthor": "Edward V. Berard"
+      "goalDescription": "Walking on water and developing software from a specification are easy if both are frozen.",
+      "goalOwner": "Edward V. Berard"
     },
     {
-      "goalText": "The most disastrous thing that you can ever learn is your first programming language.",
-      "goalAuthor": "Alan Kay"
+      "goalDescription": "The most disastrous thing that you can ever learn is your first programming language.",
+      "goalOwner": "Alan Kay"
     },
     {
-      "goalText": "The most important property of a program is whether it accomplishes the intention of its user.",
-      "goalAuthor": "C.A.R. Hoare"
+      "goalDescription": "The most important property of a program is whether it accomplishes the intention of its user.",
+      "goalOwner": "C.A.R. Hoare"
     },
     {
-      "goalText": "Delivering good software today is often better than perfect software tomorrow, so finish things and ship.",
-      "goalAuthor": "David Thomas"
+      "goalDescription": "Delivering good software today is often better than perfect software tomorrow, so finish things and ship.",
+      "goalOwner": "David Thomas"
     },
     {
-      "goalText": "If you optimize everything, you will always be unhappy.",
-      "goalAuthor": "Donald Knuth"
+      "goalDescription": "If you optimize everything, you will always be unhappy.",
+      "goalOwner": "Donald Knuth"
     },
     {
-      "goalText": "It's not a bug; it's an undocumented feature.",
-      "goalAuthor": "Lernantino"
+      "goalDescription": "It's not a bug; it's an undocumented feature.",
+      "goalOwner": "Lernantino"
     }
   ]
   
