@@ -1,4 +1,4 @@
-// Import mongoose ODM
+// Utilise mongoose ODM
 const { Schema } = require("mongoose");
 
 // Format date via helper function
@@ -14,7 +14,7 @@ const taskSchema = new Schema(
 		},
 		taskDescription: {
 			type: String,
-			required: "Your feature needs a description.",
+			required: "Your task needs a description.",
 			minlength: 1,
 			maxlength: 280,
 			trim: true,
