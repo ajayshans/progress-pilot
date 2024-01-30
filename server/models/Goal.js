@@ -74,6 +74,7 @@ taskSchema.virtual("taskProgress").get(function () {
     }
 });
 
+// Initialise Goal model
 const Goal = model("Goal", goalSchema);
 
 module.exports = Goal;
