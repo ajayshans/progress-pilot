@@ -49,7 +49,7 @@ const resolvers = {
 
       return { token, user };
     },
-    addThought: async (parent, { thoughtText }, context) => {
+    addGoal: async (parent, { thoughtText }, context) => {
       if (context.user) {
         const thought = await Thought.create({
           thoughtText,
@@ -66,7 +66,7 @@ const resolvers = {
       throw AuthenticationError;
       ('You need to be logged in!');
     },
-    addComment: async (parent, { thoughtId, commentText }, context) => {
+    addTask: async (parent, { thoughtId, commentText }, context) => {
       if (context.user) {
         return Thought.findOneAndUpdate(
           { _id: thoughtId },
@@ -83,11 +83,11 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
-    removeThought: async (parent, { thoughtId }, context) => {
+    removeGoal: async (parent, { goalId }, context) => {
       if (context.user) {
-        const thought = await Thought.findOneAndDelete({
-          _id: thoughtId,
-          thoughtAuthor: context.user.username,
+        const goal = await Goal.findOneAndDelete({
+          _id: goalId,
+          goalowner: context.user.username,
         });
 
         await User.findOneAndUpdate(
@@ -99,15 +99,16 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
-    removeComment: async (parent, { thoughtId, commentId }, context) => {
+    removeTask: async (parent, { goalId, taskId }, context) => {
       if (context.user) {
-        return Thought.findOneAndUpdate(
-          { _id: thoughtId },
+        return Goal.findOneAndUpdate(
+          { _id: goalId },
           {
             $pull: {
               comments: {
-                _id: commentId,
-                commentAuthor: context.user.username,
+                _id: taskId,
+                // Update accordingly
+                taskAssignee: context.user.username,
               },
             },
           },
