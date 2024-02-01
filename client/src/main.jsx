@@ -11,6 +11,9 @@ import Squad from './pages/Squad.jsx';
 import CreateSquadMember from './pages/CreateSquadMember.jsx';
 import UpdateSquadMember from './pages/UpdateSquadMember.jsx';
 import ErrorPage from './pages/ErrorPage';
+import Donate from './pages/Donate';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 
 const router = createBrowserRouter([
   {
@@ -42,6 +45,15 @@ const router = createBrowserRouter([
       }, {
         path: '/squad/:squadMemberId',
         element: <UpdateSquadMember />
+      }, {
+        path: '/donate',
+        element: <Donate/>
+      }, {
+        path: '/login',
+        element: <Login />
+      }, {
+        path: '/signup',
+        element: <Signup />
       }
     ]
   },
