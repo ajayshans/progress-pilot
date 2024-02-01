@@ -19,27 +19,37 @@ const typeDefs = `
     goalOwner: [User]!
   }
 
-//   type Auth {
-//     token: ID!
-//     user: User
-//   }
+  type SquadMember {
+    _id: ID
+    name: String
+    relation: String
+    efficacyScore: Int
+    weeklyHoursAvailable: Int
+    owner: [User]!
+  }
 
-//   type Query {
-//     users: [User]
-//     user(username: String!): User
-//     thoughts(username: String): [Thought]
-//     thought(thoughtId: ID!): Thought
-//     me: User
-//   }
+  type Auth {
+    token: ID!
+    user: User
+  }
 
-//   type Mutation {
-//     addUser(username: String!, email: String!, password: String!): Auth
-//     login(email: String!, password: String!): Auth
-//     addThought(thoughtText: String!): Thought
-//     addComment(thoughtId: ID!, commentText: String!): Thought
-//     removeThought(thoughtId: ID!): Thought
-//     removeComment(thoughtId: ID!, commentId: ID!): Thought
-//   }
+  type Query {
+    users: [User]
+    user(username: String!): User
+    goals(username: String): [Goal]
+    goal(thoughtId: ID!): Goal
+    me: User
+  }
+
+  type Mutation {
+    addUser(username: String!, email: String!, password: String!): Auth
+    login(email: String!, password: String!): Auth
+    addGoal(goalDescription: String!): Goal
+    addTask(goalId: ID!, taskDescription: String!): Goal
+    removeGoal(goalId: ID!): Goal
+    removeTask(goalId: ID!, taskId: ID!): Goal
+  
+}
 `;
 
 module.exports = typeDefs;
