@@ -1,11 +1,6 @@
 import { Link } from 'react-router-dom';
-import React, { useState } from "react";
 
 import Auth from '../../utils/auth';
-
-// Import React Bootstrap components
-import { Navbar, Nav, Container, Modal, Tab } from "react-bootstrap";
-
 
 const Header = () => {
   const logout = (event) => {
