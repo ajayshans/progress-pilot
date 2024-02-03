@@ -6,21 +6,21 @@ const { signToken, AuthenticationError } = require('../utils/auth');
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().populate('thoughts');
+      return User.find().populate('goals').populate('squadMembers');
     },
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('thoughts');
+      return User.findOne({ username }).populate('goals').populate('squadMembers');
     },
     goals: async (parent, { username }) => {
       const params = username ? { username } : {};
       return Goal.find(params).sort({ createdAt: -1 });
     },
-    goal: async (parent, { thoughtId }) => {
+    goal: async (parent, { goalId }) => {
       return Goal.findOne({ _id: goalId });
     },
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate('thoughts');
+        return User.findOne({ _id: context.user._id }).populate('goals').populate('squadMembers');
       }
       throw AuthenticationError;
     },
@@ -49,30 +49,30 @@ const resolvers = {
 
       return { token, user };
     },
-    addGoal: async (parent, { thoughtText }, context) => {
+    addGoal: async (parent, { goalDescription }, context) => {
       if (context.user) {
-        const thought = await Thought.create({
-          thoughtText,
-          thoughtAuthor: context.user.username,
+        const goal = await Goal.create({
+          goalDescription,
+          goalOwner: context.user.username,
         });
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { thoughts: thought._id } }
+          { $addToSet: { goals: goal._id } }
         );
 
-        return thought;
+        return goal;
       }
       throw AuthenticationError;
       ('You need to be logged in!');
     },
-    addTask: async (parent, { thoughtId, commentText }, context) => {
+    addTask: async (parent, { goalId, taskDescription }, context) => {
       if (context.user) {
-        return Thought.findOneAndUpdate(
-          { _id: thoughtId },
+        return Goal.findOneAndUpdate(
+          { _id: goalId },
           {
             $addToSet: {
-              comments: { commentText, commentAuthor: context.user.username },
+              comments: { taskDescription, taskAssignee: context.user.username },
             },
           },
           {
@@ -92,10 +92,10 @@ const resolvers = {
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { thoughts: thought._id } }
+          { $pull: { goals: goal._id } }
         );
 
-        return thought;
+        return goal;
       }
       throw AuthenticationError;
     },

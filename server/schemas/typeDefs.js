@@ -28,6 +28,10 @@ const typeDefs = `
     owner: [User]!
   }
 
+  type Checkout {
+    session: ID
+  }
+
   type Auth {
     token: ID!
     user: User
@@ -37,7 +41,7 @@ const typeDefs = `
     users: [User]
     user(username: String!): User
     goals(username: String): [Goal]
-    goal(thoughtId: ID!): Goal
+    goal(goalId: ID!): Goal
     me: User
   }
 
@@ -48,8 +52,7 @@ const typeDefs = `
     addTask(goalId: ID!, taskDescription: String!): Goal
     removeGoal(goalId: ID!): Goal
     removeTask(goalId: ID!, taskId: ID!): Goal
-  
-}
+  }
 `;
 
 module.exports = typeDefs;

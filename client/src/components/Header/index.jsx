@@ -14,15 +14,15 @@ const Header = () => {
           <Link to="/">
             <h1 className="m-0 text-light">Progress Pilot ✈️</h1>
           </Link>
-          <p className="m-0">Get into the mind of a programmer.</p>
+          <p className="m-0">Reshape your goal strategy.</p>
         </div>
         <div>
           {Auth.loggedIn() ? (
             <>
-              <Link className="btn btn-lg btn-info m-2" to="/goals">
+              <Link className="btn btn-lg m-2" to="/goals">
                 {Auth.getProfile().data.username}'s profile
               </Link>
-              <button className="btn btn-lg btn-light m-2" onClick={logout}>
+              <button className="btn btn-lg btn-dark m-2" onClick={logout}>
                 Logout
               </button>
             </>
