@@ -986,6 +986,20 @@
     display: flex !important;
   }
   
+  .menu-active {
+    text-align: center;
+    display: inline-block;
+    margin: 0;
+    text-decoration: none;
+    border-radius: 0.3rem;
+    border: 1px solid transparent;
+    outline: none;
+    background-color: #d9e9e8;
+    color: #1a1a1a;
+    font-size: 1.25rem;
+    padding: 0.8rem 1.4rem;
+  }
+
   .btn {
     text-align: center;
     display: inline-block;

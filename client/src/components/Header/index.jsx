@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import React from 'react';
+import { Menu } from 'semantic-ui-react';
 
 import Auth from '../../utils/auth';
 
@@ -7,34 +9,35 @@ const Header = () => {
     event.preventDefault();
     Auth.logout();
   };
+  const currentPage = useLocation().pathname;
   return (
     <header className="text-light py-3 flex-row align-center">
       <div className="container flex-row justify-space-between-lg justify-center align-center">
         <div>
           <Link to="/">
-            <h1 className="m-0 text-light">Progress Pilot ✈️</h1>
+            <h1 className="m-2 text-light">Progress Pilot ✈️</h1>
           </Link>
-          <p className="m-0">Reshape your goal strategy.</p>
+          <p className="m-2">Reshaping your goals.</p>
         </div>
         <div>
           {Auth.loggedIn() ? (
-            <>
-              <Link className="btn btn-lg m-2" to="/goals">
-                {Auth.getProfile().data.username}'s profile
-              </Link>
-              <button className="btn btn-lg btn-dark m-2" onClick={logout}>
+            <Menu inverted>
+              <Menu.Item as = {currentPage === '/goals' ? '' : Link} name="My Goals" to="/goals" className={currentPage === '/goals' ? 'menu-active m-2' : 'btn btn-lg btn-dark m-2'}>
+                {/* {Auth.getProfile().data.username}'s Goals */}
+              </Menu.Item>
+              <Menu.Item as = {currentPage === '/squad' ? '' : Link} name="My Squad" to="/squad" className={currentPage === '/squad' ? 'menu-active m-2' : 'btn btn-lg btn-dark m-2'}/>
+              <Menu.Item as = {currentPage === '/donate' ? '' : Link} name="Support Us" to="/donate" className={currentPage === '/donate' ? 'menu-active m-2' : 'btn btn-lg btn-dark m-2'}/>
+              <button className="btn btn-lg btn-dark m-2 mr-5" onClick={logout}>
                 Logout
               </button>
-            </>
+            </Menu>
           ) : (
-            <>
-              <Link className="btn btn-lg btn-info m-2" to="/login">
-                Login
-              </Link>
-              <Link className="btn btn-lg btn-light m-2" to="/signup">
-                Signup
-              </Link>
-            </>
+            <Menu inverted>
+              {/* Can remove /donate if authentication required */}
+              <Menu.Item as = {currentPage === '/donate' ? '' : Link} name="Support Us" to="/donate" className={currentPage === '/donate' ? 'menu-active m-2' : 'btn btn-lg btn-dark m-2'}/>
+              <Menu.Item as = {currentPage === '/login' ? '' : Link} name="Login" to="/login" className={currentPage === '/login' ? 'menu-active m-2' : 'btn btn-lg btn-dark m-2'}/>
+              <Menu.Item as = {currentPage === '/signup' ? '' : Link} name = "Sign Up" to="/signup" className={currentPage === '/signup' ? 'menu-active m-2 mr-5' : 'btn btn-lg btn-dark m-2 mr-5'}/>
+            </Menu>
           )}
         </div>
       </div>
