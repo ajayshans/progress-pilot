@@ -52,6 +52,8 @@ const resolvers = {
     addGoal: async (parent, { goalDescription }, context) => {
       if (context.user) {
         const goal = await Goal.create({
+          // goalName: `${context.user.username}'s goal`,
+          // Need to add goalName to object destructuring
           goalDescription,
           goalOwner: context.user.username,
         });
@@ -72,7 +74,7 @@ const resolvers = {
           { _id: goalId },
           {
             $addToSet: {
-              comments: { taskDescription, taskAssignee: context.user.username },
+              tasks: { taskDescription, taskAssignee: context.user.username },
             },
           },
           {

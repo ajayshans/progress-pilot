@@ -23,3 +23,14 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_GOAL = gql`
+  mutation addGoal($goalDescription: String!) {
+    addGoal(goalDescription: $goalDescription) {
+      _id
+      goalDescription
+      goalOwner
+      createdAt
+    }
+  }
+`;

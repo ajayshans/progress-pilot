@@ -14,9 +14,9 @@ const typeDefs = `
     _id: ID
     goalName: String
     goalDescription: String
-    goalReward: String
+    goalOwner: String
+    createdAt: String
     goalSquadMembers: [SquadMember]!
-    goalOwner: [User]!
   }
 
   type SquadMember {
@@ -26,6 +26,13 @@ const typeDefs = `
     efficacyScore: Int
     weeklyHoursAvailable: Int
     owner: [User]!
+  }
+
+  type Task {
+    _id: ID
+    taskDescription: String
+    taskAssignee: String
+    createdAt: String
   }
 
   type Checkout {

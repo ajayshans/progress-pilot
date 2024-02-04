@@ -21,30 +21,31 @@ const goalSchema = new Schema(
 			maxlength: 280,
 			trim: true,
 		},
+		goalOwner: {
+			type: String,
+			required: true,
+			trim: true,
+		  },
 		goalReward: {
 			type: String,
-			required: "Your goal needs a reward.",
+			// required: "Your goal needs a reward.",
 			minlength: 1,
 			maxlength: 280,
 			trim: true,
 		},
+		createdAt: {
+			type: Date,
+			default: Date.now,
+			get: (timestamp) => dateFormat(timestamp),
+		  },
+		// Array of task subdocuments
+		tasks: [taskSchema],
 		goalSquadMembers: [
 			{
 				type: Schema.Types.ObjectId,
 				ref: "SquadMember",
 			},
 		],
-		goalOwner: {
-			type: Schema.Types.ObjectId,
-			ref: "User",
-		},
-		createdAt: {
-			type: Date,
-			default: Date.now,
-			get: (timestamp) => dateFormat(timestamp),
-		},
-		// Array of task subdocuments
-		tasks: [taskSchema],
 	},
 	// Ensures availability of virtual properties
 	{

@@ -1,4 +1,4 @@
-// Utilise mongoose ODM
+// Import mongoose ODM
 const { Schema } = require("mongoose");
 
 // Format date via helper function
