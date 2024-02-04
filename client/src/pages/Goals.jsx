@@ -31,7 +31,7 @@ const Goals = () => {
                 ) : (
                 <GoalList
                 goals={goals}
-                title="Some Feed for Goal(s)..."/>
+                title="Your Goal Centre"/>
           )}
                 </div>
             </div>

@@ -4,7 +4,7 @@ const GoalList = ({
   goals,
   title,
   showTitle = true,
-  showUsername = true,
+  showUsername = false,
 }) => {
   if (!goals.length) {
     return <h3>No Goals Yet</h3>;
@@ -16,34 +16,37 @@ const GoalList = ({
       {goals &&
         goals.map((goal) => (
           <div key={goal._id} className="card mb-3">
-            <h4 className="card-header bg-primary text-light p-2 m-0">
+            <h4 className="card-header bg-black text-white p-2 m-0">
               {showUsername ? (
                 <Link
-                  className="text-light"
+                  className="text-white"
                 //   Need to change goalOwner to something else
                   to={`/goals/${goal.goalOwner}`}
                 >
                   {goal.goalOwner} <br />
                   <span style={{ fontSize: '1rem' }}>
-                    had this goal on {goal.createdAt}
+                    All users {goal.createdAt}
                   </span>
                 </Link>
               ) : (
                 <>
                   <span style={{ fontSize: '1rem' }}>
-                    You had this goal on {goal.createdAt}
+                    ~ {goal.createdAt}
                   </span>
                 </>
               )}
             </h4>
-            <div className="card-body bg-light p-2">
-              <p>{goal.goalDescription}</p>
+            <div className="card-body bg-black text-white text-center p-2">
+                <p>{goal.goalName}</p>
+                <p>{goal.goalDescription}</p>
+                {/* <p>{goal.goalReward}</p> */}
+                {/* <p>{goal.taskProgress}%</p> */}
             </div>
             <Link
-              className="btn btn-primary btn-block btn-squared"
+              className="btn btn-light btn-block btn-squared"
               to={`/goals/${goal._id}`}
             >
-              Join the discussion on this goal.
+              View Tasks
             </Link>
           </div>
         ))}

@@ -10,8 +10,8 @@ const goalSchema = new Schema(
 	{
 		goalName: {
 			type: String,
-			required: "Your goal needs a name.",
-			unique: true,
+			// required: "Your goal needs a name.",
+			// unique: true,
 			trim: true,
 		},
 		goalDescription: {
