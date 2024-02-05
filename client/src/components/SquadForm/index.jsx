@@ -2,37 +2,38 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
-import { ADD_TASK } from '../../utils/mutations';
+import { ADD_SQUAD } from '../../utils/mutations';
 
 import Auth from '../../utils/auth';
 
-const TaskForm = ({ goalId }) => {
-    const [taskName, setTaskName] = useState('');
-    const [taskDescription, setTaskDescription] = useState('');
-    const [taskAssignee, setTaskAssignee] = useState('');
-    const [taskComplete, setTaskComplete] = useState('');
+const SquadForm = ({ userId }) => {
+    const [name, setName] = useState('');
+    const [relation, setRelation] = useState('');
+    const [efficiencyScore, setEfficiencyScore] = useState('');
+    const [weeklyHoursAvailable, setWeeklyHours] = useState('');
   
 
-  const [addTask, { error }] = useMutation(ADD_TASK);
+  const [addSquadMember, { error }] = useMutation(ADD_SQUAD);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const { data } = await addTask({
+      const { data } = await addSquadMember({
         variables: {
-          goalId,
-          taskName,
-          taskDescription,
-          taskAssignee,
-          taskComplete
+          userId,
+          name,
+          relation,
+          efficiencyScore,
+          weeklyHoursAvailable,
+          owner: Auth.getProfile().data.username,
         },
       });
 
-      setTaskName('');
-      setTaskDescription('');
-      setTaskAssignee('');
-      setTaskComplete('');
+      setName('');
+      setRelation('');
+      setEfficiencyScore('');
+      setWeeklyHours('');
     } catch (err) {
       console.error(err);
     }
@@ -88,7 +89,7 @@ const TaskForm = ({ goalId }) => {
               ></textarea>
             </div>
             <div className="col-12 col-lg-12">
-            <label htmlFor="taskAssignee" className="form-label text-white">Task Assignee:</label>
+            <label htmlFor="taskAssignee" className="form-label text-text-white">Task Assignee:</label>
               <textarea
                 name="taskAssignee"
                 placeholder="Assign this task to a person in your squad"
@@ -107,8 +108,8 @@ const TaskForm = ({ goalId }) => {
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}
               >
-                <option defaultValue>Select Option</option>
-                <option value="yes">Yes</option>
+                <option value="">Select Option</option>
+                <option value="true">Yes</option>
                 <option value="false">No</option>
               </select>
             </div>
@@ -135,4 +136,4 @@ const TaskForm = ({ goalId }) => {
   );
 };
 
-export default TaskForm;
+export default SquadForm;

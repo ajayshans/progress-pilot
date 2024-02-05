@@ -36,3 +36,24 @@ export const ADD_GOAL = gql`
     }
   }
 `;
+
+export const ADD_TASK = gql`
+  mutation addTask($goalId: ID!, $taskName: String!, $taskDescription: String!, $taskAssignee: String!, $taskComplete: String!) {
+    addTask(goalId: $goalId, taskName: $taskName, taskDescription: $taskDescription, taskAssignee: $taskAssignee, taskComplete: $taskComplete) {
+      _id
+      goalName
+      goalDescription
+      goalReward
+      goalOwner
+      createdAt
+      tasks {
+        _id
+        taskName
+        taskDescription
+        taskAssignee
+        taskComplete
+        taskCreatedAt
+      }
+    }
+  }
+`;

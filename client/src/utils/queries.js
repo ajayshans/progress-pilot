@@ -53,3 +53,24 @@ export const QUERY_ME = gql`
     }
   }
 `;
+
+export const QUERY_SINGLE_GOAL = gql`
+  query getSingleGoal($goalId: ID!) {
+    goal(goalId: $goalId) {
+      _id
+      goalName
+      goalDescription
+      goalReward
+      goalOwner
+      createdAt
+      tasks {
+        _id
+        taskName
+        taskDescription
+        taskAssignee
+        taskComplete
+        taskCreatedAt
+      }
+    }
+  }
+`;

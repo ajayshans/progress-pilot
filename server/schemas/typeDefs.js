@@ -18,6 +18,7 @@ const typeDefs = `
     goalOwner: String
     createdAt: String
     goalSquadMembers: [SquadMember]!
+    tasks: [Task]!
   }
 
   type SquadMember {
@@ -31,9 +32,11 @@ const typeDefs = `
 
   type Task {
     _id: ID
+    taskName: String
     taskDescription: String
     taskAssignee: String
-    createdAt: String
+    taskComplete: String
+    taskCreatedAt: String
   }
 
   type Checkout {
@@ -57,7 +60,7 @@ const typeDefs = `
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addGoal(goalName: String!, goalDescription: String!, goalReward: String!): Goal
-    addTask(goalId: ID!, taskDescription: String!): Goal
+    addTask(goalId: ID!, taskName: String!, taskDescription: String!, taskAssignee: String!, taskComplete: String!): Goal
     removeGoal(goalId: ID!): Goal
     removeTask(goalId: ID!, taskId: ID!): Goal
   }

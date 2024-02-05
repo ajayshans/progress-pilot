@@ -68,13 +68,18 @@ const resolvers = {
       throw AuthenticationError;
       ('You need to be logged in!');
     },
-    addTask: async (parent, { goalId, taskDescription }, context) => {
+    addTask: async (parent, { goalId, taskName, taskDescription, taskAssignee, taskComplete }, context) => {
       if (context.user) {
         return Goal.findOneAndUpdate(
           { _id: goalId },
           {
             $addToSet: {
-              tasks: { taskDescription, taskAssignee: context.user.username },
+              tasks: { 
+                taskName,
+                taskDescription,
+                taskAssignee,
+                taskComplete
+              },
             },
           },
           {
@@ -89,7 +94,7 @@ const resolvers = {
       if (context.user) {
         const goal = await Goal.findOneAndDelete({
           _id: goalId,
-          goalowner: context.user.username,
+          goalOwner: context.user.username,
         });
 
         await User.findOneAndUpdate(
@@ -107,7 +112,7 @@ const resolvers = {
           { _id: goalId },
           {
             $pull: {
-              comments: {
+              tasks: {
                 _id: taskId,
                 // Update accordingly
                 taskAssignee: context.user.username,

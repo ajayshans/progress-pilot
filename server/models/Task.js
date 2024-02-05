@@ -20,8 +20,8 @@ const taskSchema = new Schema(
 			trim: true,
 		},
 		taskAssignee: {
-			type: Schema.Types.ObjectId,
-			ref: "SquadMember",
+			type: String,
+			// ref: "SquadMember",
 		},
 		taskCreatedAt: {
 			type: Date,
@@ -29,9 +29,8 @@ const taskSchema = new Schema(
 			get: (timestamp) => dateFormat(timestamp),
 		},
         taskComplete: {
-            type: Boolean,
-            required: true,
-            default: false
+            type: String,
+            // required: true,
         },
 	},
 	// Ensures availability of virtual properties
