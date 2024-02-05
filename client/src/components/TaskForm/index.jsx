@@ -51,7 +51,6 @@ const TaskForm = ({ goalId }) => {
         setTaskAssignee(inputValue);
     } else if (inputType === 'taskComplete') {
         setTaskComplete(inputValue)
-        console.log(typeof taskComplete);
     }
   };
 
@@ -108,8 +107,8 @@ const TaskForm = ({ goalId }) => {
                 onChange={handleChange}
               >
                 <option defaultValue>Select Option</option>
-                <option value="yes">Yes</option>
-                <option value="false">No</option>
+                <option value="COMPLETE">Yes</option>
+                <option value="IN PROGRESS">No</option>
               </select>
             </div>
 
