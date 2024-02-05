@@ -7,7 +7,7 @@ const GoalList = ({
   showUsername = false,
 }) => {
   if (!goals.length) {
-    return <h3>No Goals Yet</h3>;
+    return <h3>No Goals Yet: ⬆️ Click above to create your first!</h3>;
   }
 
   return (

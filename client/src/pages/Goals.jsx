@@ -2,7 +2,6 @@ import { useQuery } from '@apollo/client';
 import { Link } from 'react-router-dom';
 
 import GoalList from '../components/GoalList';
-import GoalForm from '../components/GoalForm';
 import Auth from '../utils/auth';
 
 import { QUERY_GOALS } from '../utils/queries';
