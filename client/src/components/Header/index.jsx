@@ -15,11 +15,11 @@ const Header = () => {
       <div className="container flex-row justify-space-between-lg justify-center align-center">
         <div>
           <Link to="/">
-            <h1 className="m-3 text-light">Progress Pilot ✈️</h1>
+            <h1 className="m-3 mt-5 text-light">Progress Pilot ✈️</h1>
           </Link>
           <p className="m-3">Reshape your goals</p>
         </div>
-        <div>
+        <div className = "p-5">
           {Auth.loggedIn() ? (
             <Menu inverted>
               <Menu.Item as = {currentPage === '/goals' ? '' : Link} name="My Goals" to="/goals" className={currentPage === '/goals' ? 'menu-active m-2' : 'btn btn-lg btn-dark m-2'}>

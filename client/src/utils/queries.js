@@ -31,6 +31,7 @@ export const QUERY_GOALS = gql`
       _id
       goalName
       goalDescription
+      goalReward
       goalOwner
       createdAt
     }

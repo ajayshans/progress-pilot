@@ -448,6 +448,10 @@
   }
   
   /* HEIGHT / WIDTH UTILS */
+  .w-125 {
+    width: 125%;
+  }
+
   .w-100 {
     width: 100%;
   }
@@ -1078,6 +1082,11 @@
   
   .btn.btn-dark {
     background-color: #1a1a1a;
+    color: #d9e9e8;
+  }
+
+  .btn.btn-purple {
+    background-color: rgb(152, 61, 232);
     color: #d9e9e8;
   }
   

@@ -39,7 +39,7 @@ const GoalList = ({
             <div className="card-body bg-black text-white text-center p-2">
                 <p>{goal.goalName}</p>
                 <p>{goal.goalDescription}</p>
-                {/* <p>{goal.goalReward}</p> */}
+                <p>{goal.goalReward}</p>
                 {/* <p>{goal.taskProgress}%</p> */}
             </div>
             <Link

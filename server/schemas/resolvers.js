@@ -49,12 +49,12 @@ const resolvers = {
 
       return { token, user };
     },
-    addGoal: async (parent, { goalDescription }, context) => {
+    addGoal: async (parent, { goalName, goalDescription, goalReward }, context) => {
       if (context.user) {
         const goal = await Goal.create({
-          // goalName: `${context.user.username}'s goal`,
-          // Need to add goalName to object destructuring
+          goalName,
           goalDescription,
+          goalReward,
           goalOwner: context.user.username,
         });
 

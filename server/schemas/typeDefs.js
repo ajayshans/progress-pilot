@@ -14,6 +14,7 @@ const typeDefs = `
     _id: ID
     goalName: String
     goalDescription: String
+    goalReward: String
     goalOwner: String
     createdAt: String
     goalSquadMembers: [SquadMember]!
@@ -55,7 +56,7 @@ const typeDefs = `
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addGoal(goalDescription: String!): Goal
+    addGoal(goalName: String!, goalDescription: String!, goalReward: String!): Goal
     addTask(goalId: ID!, taskDescription: String!): Goal
     removeGoal(goalId: ID!): Goal
     removeTask(goalId: ID!, taskId: ID!): Goal

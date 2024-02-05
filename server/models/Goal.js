@@ -10,8 +10,8 @@ const goalSchema = new Schema(
 	{
 		goalName: {
 			type: String,
-			// required: "Your goal needs a name.",
-			// unique: true,
+			required: "Your goal needs a name.",
+			unique: true,
 			trim: true,
 		},
 		goalDescription: {
@@ -28,7 +28,7 @@ const goalSchema = new Schema(
 		  },
 		goalReward: {
 			type: String,
-			// required: "Your goal needs a reward.",
+			required: "Your goal needs a reward.",
 			minlength: 1,
 			maxlength: 280,
 			trim: true,
