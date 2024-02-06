@@ -67,7 +67,6 @@ export const ADD_SQUAD = gql`
         efficacyScore
         weeklyHoursAvailable
         owner
-      }
     }
   }
 `;
