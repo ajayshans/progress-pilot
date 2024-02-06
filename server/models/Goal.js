@@ -39,7 +39,7 @@ const goalSchema = new Schema(
 		  },
 		// Array of task subdocuments
 		tasks: [taskSchema],
-		goalSquadMembers: [
+		squadMembers: [
 			{
 				type: Schema.Types.ObjectId,
 				ref: "SquadMember",

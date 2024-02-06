@@ -17,7 +17,7 @@ const typeDefs = `
     goalReward: String
     goalOwner: String
     createdAt: String
-    goalSquadMembers: [SquadMember]!
+    squadMembers: [SquadMember]
     tasks: [Task]!
   }
 
@@ -27,7 +27,7 @@ const typeDefs = `
     relation: String
     efficacyScore: Int
     weeklyHoursAvailable: Int
-    owner: [User]!
+    owner: [User]
   }
 
   type Task {
