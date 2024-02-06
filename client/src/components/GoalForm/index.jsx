@@ -38,6 +38,7 @@ const GoalForm = () => {
       setGoalDescription('');
       setGoalName('');
       setGoalReward('');
+      console.log('Goal added', data.addGoal);
     } catch (err) {
       console.error(err);
     }

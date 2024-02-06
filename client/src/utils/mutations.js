@@ -71,3 +71,16 @@ export const ADD_SQUAD = gql`
   }
 `;
 
+export const DELETE_GOAL = gql`
+  mutation removeGoal($goalId: ID!) {
+    removeGoal(goalId: $goalId) {
+        _id
+        goalName
+        goalDescription
+        goalReward
+        goalOwner
+        createdAt
+    }
+  }
+`;
+

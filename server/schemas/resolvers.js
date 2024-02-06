@@ -115,7 +115,7 @@ const resolvers = {
               tasks: {
                 _id: taskId,
                 // Update accordingly
-                taskAssignee: context.user.username,
+                // taskAssignee: context.user.username,
               },
             },
           },
