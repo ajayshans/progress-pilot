@@ -9,7 +9,7 @@ import Auth from '../../utils/auth';
 const SquadForm = ({ userId }) => {
     const [name, setName] = useState('');
     const [relation, setRelation] = useState('');
-    const [efficiencyScore, setEfficiencyScore] = useState('');
+    const [efficacyScore, setEfficacyScore] = useState('');
     const [weeklyHoursAvailable, setWeeklyHours] = useState('');
   
 
@@ -24,7 +24,7 @@ const SquadForm = ({ userId }) => {
           userId,
           name,
           relation,
-          efficiencyScore,
+          efficacyScore,
           weeklyHoursAvailable,
           owner: Auth.getProfile().data.username,
         },

@@ -25,9 +25,9 @@ const typeDefs = `
     _id: ID
     name: String
     relation: String
-    efficacyScore: Int
-    weeklyHoursAvailable: Int
-    owner: [User]
+    efficacyScore: String
+    weeklyHoursAvailable: String
+    owner: String
   }
 
   type Task {
@@ -61,6 +61,7 @@ const typeDefs = `
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addGoal(goalName: String!, goalDescription: String!, goalReward: String!): Goal
+    addSquad(goalName: String!, goalDescription: String!, goalReward: String!): Goal
     addTask(goalId: ID!, taskName: String!, taskDescription: String!, taskAssignee: String!, taskComplete: String!): Goal
     removeGoal(goalId: ID!): Goal
     removeTask(goalId: ID!, taskId: ID!): Goal

@@ -17,18 +17,21 @@ const squadMemberSchema = new Schema(
 		},
         // 0-2 range, where 1 is average
 		efficacyScore: {
-			type: Number,
+			type: String,
 			required: true,
 		},
         // Time squad member is able to commit to goal
 		weeklyHoursAvailable: {
-			type: Number,
+			type: String,
 			required: true,
 		},
         // Owner of the goal
 		owner: {
-			type: Schema.Types.ObjectId,
-			ref: "User",
+			type: String,
+			required: true,
+			trim: true
+			// type: Schema.Types.ObjectId,
+			// ref: "User",
 		},
 	},
 	// Ensures availability of virtual properties

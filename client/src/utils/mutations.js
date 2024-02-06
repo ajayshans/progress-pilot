@@ -58,3 +58,17 @@ export const ADD_TASK = gql`
   }
 `;
 
+export const ADD_SQUAD = gql`
+  mutation addSquad($name: String!, $relation: String!, $efficacyScore: String!, $weeklyHoursAvailable: String!) {
+    addSquad(name: $name, relation: $relation, efficacyScore: $efficacyScore, taskComplete: $taskComplete) {
+        _id
+        name
+        relation
+        efficacyScore
+        weeklyHoursAvailable
+        owner
+      }
+    }
+  }
+`;
+

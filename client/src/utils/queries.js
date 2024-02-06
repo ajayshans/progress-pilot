@@ -21,6 +21,13 @@ export const QUERY_USER = gql`
         goalDescription
         createdAt
       }
+      squadMembers {
+        _id
+        name
+        relation
+        efficacyScore
+        weeklyHoursAvailable
+      }
     }
   }
 `;
