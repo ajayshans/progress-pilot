@@ -53,6 +53,7 @@ const typeDefs = `
     user(username: String!): User
     goals(username: String): [Goal]
     goal(goalId: ID!): Goal
+    squadMembers(username: String): [SquadMember]
     me: User
   }
 

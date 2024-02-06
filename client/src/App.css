@@ -12,6 +12,10 @@
     /* 2 */
   }
 
+  .tag-line {
+    padding: 13rem
+  }
+
   .header-background {
     background-color: black;
     color: white;

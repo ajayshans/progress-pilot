@@ -10,7 +10,12 @@ import { Link } from 'react-router-dom';
 const Home = () => {
 
     return (
-        <h1 className = "p-3 text-center">Reshape your goals with Progress Pilot</h1>
+        
+        <div>
+            <br />
+            <h1 className = "tag-line text-center">Reshape your goals with Progress Pilot</h1>
+            {/* <img src="" alt="" /> */}
+        </div>
     )
 
 };

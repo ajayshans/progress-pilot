@@ -21,6 +21,7 @@ const taskSchema = new Schema(
 		},
 		taskAssignee: {
 			type: String,
+			// type: Schema.Types.ObjectId,
 			// ref: "SquadMember",
 		},
 		taskCreatedAt: {
