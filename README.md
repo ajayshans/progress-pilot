@@ -7,7 +7,8 @@
 App.css style for CSS styling conversions makes use of 'normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css' from [Nicolas Gallagher](https://github.com/necolas)
 
 ## Web Application Preview
-![Application Screenshot 1](src/assets/images/portfolio-preview-1.png)
+![Application Screenshot 1](images/progressPilot-preview-1.png)
+![Application Screenshot 2](images/progressPilot-preview-2.png)
 
 ## Relevant Links
 - [Deployed Application](https://progress-pilot.onrender.com/)
