@@ -2,8 +2,8 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_CHECKOUT = gql`
-  query getCheckout{
-    checkout{
+  query getCheckout {
+    checkout {
       session
     }
   }

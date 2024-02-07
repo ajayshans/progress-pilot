@@ -55,6 +55,7 @@ const typeDefs = `
     goal(goalId: ID!): Goal
     squadMembers(username: String): [SquadMember]
     me: User
+    checkout: Checkout
   }
 
   type Mutation {
