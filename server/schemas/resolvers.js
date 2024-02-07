@@ -31,9 +31,9 @@ const resolvers = {
           price_data: {
               currency: 'aud',
               product_data: {
-                  name: '$2 Donation'
+                  name: 'Progress Pilot $10 Donation'
               },
-              unit_amount: 200
+              unit_amount: 10 * 100
           },
           quantity: 1
       }];
