@@ -18,7 +18,7 @@ const DeleteButton = ({ goalId }) => {
   };
 
   return (
-    <button className= "btn btn-lg btn-danger mx-5" onClick={handleDelete} disabled={loading}>
+    <button className= "btn btn-danger mx-5" onClick={handleDelete} disabled={loading}>
       DELETE GOAL
     </button>
   );

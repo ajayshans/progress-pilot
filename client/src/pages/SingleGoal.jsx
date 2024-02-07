@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { Link } from 'react-router-dom';
 
-// import CommentList from '../components/CommentList';
+import UpdateButton from '../components/UpdateButton';
 import DeleteButton from '../components/DeleteButton';
 import TaskList from '../components/TaskList';
 
@@ -35,6 +35,7 @@ const SingleGoal = () => {
                     className="card-body py-5"
                     >
                     <h5>{goal.goalDescription}</h5>
+                    <UpdateButton goalId={goal._id} currentGoalDescription={goal.goalDescription} />
                     </blockquote>
                     <Link to={`/goals`}>
                         <DeleteButton goalId={goal._id} />

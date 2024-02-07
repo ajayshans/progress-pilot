@@ -25,7 +25,7 @@ const Header = () => {
               <Menu.Item as = {currentPage === '/goals' ? '' : Link} name="My Goals" to="/goals" className={currentPage === '/goals' ? 'menu-active m-2' : 'btn btn-lg btn-dark m-2'}>
                 {/* {Auth.getProfile().data.username}'s Goals */}
               </Menu.Item>
-              <Menu.Item as = {currentPage === '/squad' ? '' : Link} name="My Squad" to="/squad" className={currentPage === '/squad' ? 'menu-active m-2' : 'btn btn-lg btn-dark m-2'}/>
+              {/* <Menu.Item as = {currentPage === '/squad' ? '' : Link} name="My Squad" to="/squad" className={currentPage === '/squad' ? 'menu-active m-2' : 'btn btn-lg btn-dark m-2'}/> */}
               <Menu.Item as = {currentPage === '/donate' ? '' : Link} name="Support Us" to="/donate" className={currentPage === '/donate' ? 'menu-active m-2' : 'btn btn-lg btn-dark m-2'}/>
               <button className="btn btn-lg btn-dark m-2 mr-5" onClick={logout}>
                 Logout

@@ -61,6 +61,7 @@ const typeDefs = `
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addGoal(goalName: String!, goalDescription: String!, goalReward: String!): Goal
+    updateGoalDescription(goalId: ID!, newGoalDescription: String!): Goal
     addSquad(goalName: String!, goalDescription: String!, goalReward: String!): Goal
     addTask(goalId: ID!, taskName: String!, taskDescription: String!, taskAssignee: String!, taskComplete: String!): Goal
     removeGoal(goalId: ID!): Goal

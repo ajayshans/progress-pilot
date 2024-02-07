@@ -124,6 +124,24 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
+    updateGoalDescription: async (parent, { goalId, newGoalDescription }, context) => {
+      if (context.user) {
+        const updatedGoal = await Goal.findOneAndUpdate({
+          _id: goalId,
+          goalOwner: context.user.username,
+        },
+        {goalDescription: newGoalDescription},
+        { new: true }
+        );
+
+        if(!updatedGoal) {
+          throw new Error('Goal not found or user does not have permission to update')
+        }
+
+        return updatedGoal;
+      }
+      throw AuthenticationError;
+    },
   },
 };
 

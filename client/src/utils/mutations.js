@@ -84,3 +84,16 @@ export const DELETE_GOAL = gql`
   }
 `;
 
+export const UPDATE_GOAL_DESCRIPTION = gql`
+  mutation updateGoalDescription($goalId: ID!, $newGoalDescription: String!) {
+    updateGoalDescription(goalId: $goalId, newGoalDescription: $newGoalDescription) {
+      _id
+      goalName
+      goalDescription
+      goalReward
+      goalOwner
+      createdAt
+    }
+  }
+`;
+
